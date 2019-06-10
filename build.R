@@ -6,12 +6,13 @@
 source("functions/init_functions.R")
 
 #Loading and installing packages
-init.pacs(c("RCurl",           #Web utilities
-              "rvest",         #tidy webscraping
-              "tidyverse",     #
-              "lubridate",     #to work with dates
-              "sf",            #tidy compatible GIS
-              "progress"       #for progress bar
+init.pacs(c("RCurl",         #Web utilities
+            "rvest",         #tidy webscraping
+            "tidyverse",     #
+            "googledrive",   #tidy compatible access to google drive
+            "lubridate",     #to work with dates
+            "sf",            #tidy compatible GIS
+            "progress"       #for progress bar
               ))
 
 
@@ -32,6 +33,10 @@ if(!dir.exists("cache")){
 #######################
 #Setting readin projections for GIS
 readin.proj=4269 #because it works with the lat and lons provided
+
+
+#######################
+message('Download zipped file from: https://drive.google.com/open?id=1kgxGHYoRcdpdxXE5O9pQxnJqBkNKJGQy. Unzip and see Process_Smoke.R')
 
 #Project flow:
 #Download shp files
